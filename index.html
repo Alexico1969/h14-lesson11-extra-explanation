@@ -35,7 +35,7 @@
         var offset = Math.pow(10, length) - lowestNumber - 1;
         output.append("<p>var offset = Math.pow(10, length) - lowestNumber - 1; // offset = " + offset + "</p>");
         var number = Math.round(lowestNumber + Math.random()*offset);
-        output.append(`<p class="explanation">And now we use Math.random() to get a random number</p>`);
+        output.append(`<p class="explanation">And now we use Math.random() plus those 2 variables to get a random number with ${length} digits</p>`);
         output.append("<p id='result'>var number = Math.round(lowestNumber + Math.random()*offset); // number = " + number + "</p>");
         output.append(`<p class="explanation">Makes sense that the offset was the max number minus the lowest ?</p>`);
       }
