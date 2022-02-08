@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>generateNumber Demo</h1>
+    <p>Choose a number length, and see how a random number with that amount of digits is created...</p>
+    <input id="length" type="number" placeholder="Choose length">
+    <button id="submit-btn">Generate</button>
+    <br><br>
+    <div id="display"></div>
+    <script>
+      console.log(">> testing console");
+      
+      function generateNumber(){
+        console.log(">> entering function generateNumber");
+        var length = $("#length").val();
+        var output = $("#display");
+        output.html("");
+        output.append("var length = ", length, ";");
+        output.append("<br>");
+        var lowestNumber = Math.pow(10, length - 1);
+        output.append("<p>var lowestNumber = Math.pow(10, length - 1); // lowestNumber = " + lowestNumber + "</p>");
+        var offset = Math.pow(10, length) - lowestNumber - 1;
+        output.append("<p>var offset = Math.pow(10, length) - lowestNumber - 1; // offset = " + offset + "</p>");
+        var number = Math.round(lowestNumber + Math.random()*offset);
+        output.append("<p id='result'>var number = Math.round(lowestNumber + Math.random()*offset); // number = " + number + "</p>");
+      }
+
+      $("#submit-btn").click(generateNumber);
+    </script>
+  </body>
+</html>
