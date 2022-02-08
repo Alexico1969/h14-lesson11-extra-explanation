@@ -5,3 +5,8 @@
   #result{
     font-weight: bold;
   }
+
+  .explanation{
+      color: blue;
+      padding-left: 10px;
+  }
