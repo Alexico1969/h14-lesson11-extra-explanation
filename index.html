@@ -25,19 +25,26 @@
         output.append("var length = ", length, ";");
         output.append("<br>");
         output.append(`<p class="explanation">We want ${length} digits for our random number. What's the lowest number with ${length} digits ? </p>`);
-        output.append(`<p class="explanation">Well this is how we calculate that for this specific length: </p>`);
+        output.append(`<p class="explanation">Calculating the lowest number for length ${length}:</p>`);
         var lowestNumber = Math.pow(10, length - 1);
         output.append("<p>var lowestNumber = Math.pow(10, length - 1); // lowestNumber = " + lowestNumber + "</p>");
         output.append(`<p class="explanation">What's the highest number with ${length} digits ? </p>`);
-        output.append(`<p class="explanation">Well we want that number, but minus the lowest number. </p>`);
-        output.append(`<p class="explanation">(further up the road you'll see why) </p>`);
-        output.append(`<p class="explanation">Well this is how we calculate that number for this specific length: </p>`);
+        var highestNumber = Math.pow(10, length) -1;
+        var diff = highestNumber - lowestNumber;
+        output.append(`<p class="explanation">That would be ${highestNumber} </p>`);
+        output.append("<br>");
+        output.append(`<p class="explanation">Since we start at ${lowestNumber}, the most we could add without going over ${highestNumber} would be ${diff}.</p>`);
+        output.append(`<p class="explanation">So that number (${diff}), we call the 'offset'</p>`);
+        output.append(`<p class="explanation">Calculating the offset:</p>`);
         var offset = Math.pow(10, length) - lowestNumber - 1;
         output.append("<p>var offset = Math.pow(10, length) - lowestNumber - 1; // offset = " + offset + "</p>");
+        output.append("<br>");
         var number = Math.round(lowestNumber + Math.random()*offset);
-        output.append(`<p class="explanation">And now we use Math.random() plus those 2 variables to get a random number with ${length} digits</p>`);
+        output.append(`<p class="explanation">Using Math.random() and variable offset to get a random ${length} digit  number</p>`);
         output.append("<p id='result'>var number = Math.round(lowestNumber + Math.random()*offset); // number = " + number + "</p>");
-        output.append(`<p class="explanation">Makes sense that the offset was the max number minus the lowest ?</p>`);
+        output.append(`<p class="explanation">Makes sense?</p>`);
+        output.append("<br>");
+        output.append(`<p class="explanation">${number} will be returned by function generateNumber</p>`);
       }
 
       $("#submit-btn").click(generateNumber);
