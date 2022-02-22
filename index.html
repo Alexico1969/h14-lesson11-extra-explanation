@@ -40,7 +40,7 @@
         output.append(`<p class="explanation">So that number (${diff}), we call the 'offset'</p>`);
         output.append(`<p class="explanation">Calculating the offset:</p>`);
         var offset = Math.pow(10, length) - lowestNumber - 1;
-        output.append("<p>var offset = Math.pow(10, length) - lowestNumber - 1; // offset = " + offset + "</p>");
+        output.append("<p>var offset = highestNumber - lowestNumber - 1; // offset = " + offset + "</p>");
         output.append("<br>");
         var number = Math.round(lowestNumber + Math.random()*offset);
         output.append(`<p class="explanation">Using Math.random() and variable offset to get a random ${length} digit  number</p>`);
