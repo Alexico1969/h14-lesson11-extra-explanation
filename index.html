@@ -29,11 +29,14 @@
         var lowestNumber = Math.pow(10, length - 1);
         output.append("<p>var lowestNumber = Math.pow(10, length - 1); // lowestNumber = " + lowestNumber + "</p>");
         output.append(`<p class="explanation">What's the highest number with ${length} digits ? </p>`);
+        output.append(`<p class="explanation">Calculating the highest number for length ${length}:</p>`);
         var highestNumber = Math.pow(10, length) -1;
+        output.append("<p>var highestNumber = Math.pow(10, length) -1; // highestNumber = " + highestNumber + "</p>");
         var diff = highestNumber - lowestNumber;
-        output.append(`<p class="explanation">That would be ${highestNumber} </p>`);
         output.append("<br>");
-        output.append(`<p class="explanation">Since we start at ${lowestNumber}, the most we could add without going over ${highestNumber} would be ${diff}.</p>`);
+        output.append("<p class='explanation'>We are going to add an offset to lowestNumber.</p>");
+        output.append(`<p class="explanation">Since we start at ${lowestNumber}, the most we could add without going over ${highestNumber} is ${diff} </p>`);
+        output.append("<p></p>");
         output.append(`<p class="explanation">So that number (${diff}), we call the 'offset'</p>`);
         output.append(`<p class="explanation">Calculating the offset:</p>`);
         var offset = Math.pow(10, length) - lowestNumber - 1;
